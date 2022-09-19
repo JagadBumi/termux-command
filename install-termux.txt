@@ -1,0 +1,32 @@
+How to install termux android os 5/6 armeabi-v7a offline bootstraps
+
+Download termux v0.79 offline bootstraps https://archive.org/download/termux-repositories-legacy/termux-v0.79-offline-bootstraps.apk
+
+"Termux from playstore for android 5/6 was unable cannot install online bootstraps"
+
+# Termux command type
+# Delete game.list science.list
+
+cd ../usr/etc/apt/sources.list.d
+rm -rf *
+echo "deb https://packages.termux.dev/termux-main-21/ stable main" > science.list
+cd ~
+
+# Upgrade reposity
+# if question, answer Y
+
+pkg upgrade && apt upgrade && apt update && pkg upgrade && pkg update
+pkg install nano
+pkg install python
+pip install --upgrade pip
+pkg install php
+pkg install git
+pkg install wget
+
+# Set termux storage internal memory directory
+
+termux-setup-storage
+
+# Set termux keyboard & font style
+
+git clone https://github.com/JagadBumi/.termux && termux-reload-settings
