@@ -30,3 +30,5 @@ termux-setup-storage
 # Set termux keyboard & font style
 
 git clone https://github.com/JagadBumi/.termux && termux-reload-settings
+
+
