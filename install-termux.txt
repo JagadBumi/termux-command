@@ -4,7 +4,7 @@ Download termux v0.79 offline bootstraps https://archive.org/download/termux-rep
 
 "Termux from playstore for android 5/6 was unable cannot install online bootstraps"
 
-# Termux command type
+# Replace repo souces
 
 cd ../usr/etc/apt;ls
 echo "deb https://packages.termux.dev/termux-main-21/ stable main" > sources.list
