@@ -5,30 +5,42 @@ Download termux v0.79 offline bootstraps https://archive.org/download/termux-rep
 "Termux from playstore for android 5/6 was unable cannot install online bootstraps"
 
 # Termux command type
-# Delete game.list science.list
 
-cd ../usr/etc/apt/sources.list.d
-rm -rf *
-echo "deb https://packages.termux.dev/termux-main-21/ stable main" > science.list
+cd ../usr/etc/apt;ls
+echo "deb https://packages.termux.dev/termux-main-21/ stable main" > sources.list
+cd sources.list.d;ls
+echo "deb https://termux.dev/game-packages-21-bin games stable" > game.list
+echo "deb https://termux.dev/science-packages-21-bin science stable" > science.list
 cd ~
 
-# Upgrade reposity
-# if question, answer Y
+# Upgrade update reposity
+# if question, answer N and Y
 
-pkg upgrade && apt upgrade && apt update && pkg upgrade && pkg update
-pkg install nano
-pkg install python
+pkg upgrade
+apt upgrade
+apt update
+pkg upgrade
+pkg update
+apt-get upgrade
+apt-get update
+
+pkg install micro mc nano wget git python python2 -y
 pip install --upgrade pip
-pkg install php
-pkg install wget
-pkg install git
 
-# Set termux storage internal memory directory
+# Set termux storage internal memory
 
 termux-setup-storage
+
+# How to open storage
+
+cd /sdcard
+cd /storage/emulated/0
+
+OR
+
+cd /storage/shared
 
 # Set termux keyboard & font style
 
 git clone https://github.com/JagadBumi/.termux && termux-reload-settings
-
 
